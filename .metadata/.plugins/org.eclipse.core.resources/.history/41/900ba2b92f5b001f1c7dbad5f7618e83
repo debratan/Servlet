@@ -1,0 +1,55 @@
+package firp; 
+ 
+import java.io.IOException; import java.io.PrintWriter; 
+  
+  
+  
+import javax.servlet.http.HttpServlet; import javax.servlet.http.HttpServletRequest; import javax.servlet.http.HttpServletResponse; 
+  
+  
+public class calculator extends HttpServlet { public void service(HttpServletRequest req, HttpServletResponse res) throws IOException{ int i=Integer.parseInt(req.getParameter("n1")); int j=Integer.parseInt(req.getParameter("n2")); 
+String q=(req.getParameter("o")); PrintWriter out=res.getWriter(); switch(q.charAt(0)) {  case '+': 
+       int k1=i+j;        out.println("add is:"+k1);        break;  case '-':  int m1=i-j;  out.println("subtract is:"+m1);  break; 
+case '*':  int k2=i*j;  out.println("multiplication is:"+k2);  break;  case '/': 
+ double k4=i/j;  out.println("multiplication is:"+k4);  break; 
+  
+ default: 
+System.out.println("Invalid operator"); 
+} 
+ 
+} 
+ 
+} 
+ 
+ Output question1 
+Enter 1st no:5 
+Enter 2nd no:5 
+Enter operator:+ Submit add is:10 
+ 
+Question2 
+Create a servlet for a login page. If the username and password are correct then it says message “Hello” else a message “login failed”. 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="ISO-8859-1"> 
+<title>Login</title> 
+</head> 
+<body> 
+  <div class="container"> 
+      <h1>LOGIN PAGE</h1> 
+      <form action="login" method="get"> 
+        <table> 
+         <tr> 
+           <td>Username:</td> 
+           <td><input type="text" name="username" placeholder="Enter your username"></td> 
+          </tr> 
+          <tr> 
+            <td>Password:</td> 
+            <td><input type="text" name="password" placeholder="Enter your password"></td> 
+          </tr>   
+      </table> 
+       <input type="Submit"> 
+</form> 
+</div> 
+</body> 
+</html> 

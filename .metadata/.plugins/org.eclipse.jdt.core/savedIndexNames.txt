@@ -1,0 +1,11 @@
+INDEX VERSION 1.134+C:\Users\coreai\Documents\mydata\MCA\3rdSem\ASMT\code\.metadata\.plugins\org.eclipse.jdt.core
+2324423543.index
+2949714611.index
+181068541.index
+3986714800.index
+503805314.index
+1865797976.index
+2963629157.index
+1552008726.index
+1823718794.index
+1056894048.index
