@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;4VisitCount/src/main/java/login&apos; to &apos;visitcount&apos;" description="Rename resource &apos;login&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/login" name="visitcount" stamp="1723745379110" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;4VisitCount/src/main/java/visitcount/Login.java&apos; to &apos;VisitCounterServlet.java&apos;" description="Rename resource &apos;Login.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/visitcount/Login.java" name="VisitCounterServlet.java" stamp="1723745411890" updateReferences="true"/>
-</session>

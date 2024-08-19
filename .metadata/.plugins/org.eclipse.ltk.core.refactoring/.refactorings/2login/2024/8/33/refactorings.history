@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;2login/src/main/java/firp&apos; to &apos;login&apos;" description="Rename resource &apos;firp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/firp" name="login" stamp="1723744936324" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;2login/src/main/java/login/Calculator.java&apos; to &apos;Login.java&apos;" description="Rename resource &apos;Calculator.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/login/Calculator.java" name="Login.java" stamp="1723744954892" updateReferences="true"/>
-</session>
