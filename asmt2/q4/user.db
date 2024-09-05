@@ -1,0 +1,9 @@
+CREATE TABLE users (
+    id NUMBER PRIMARY KEY,
+    username VARCHAR2(50) NOT NULL,
+    password VARCHAR2(50) NOT NULL
+);
+
+
+INSERT INTO users (id, username, password)
+VALUES (users_seq.NEXTVAL, 'testuser', 'password123');
