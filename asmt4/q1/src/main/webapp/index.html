@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Numbers in Descending Order</title>
+</head>
+<body>
+    <h1>Sort Numbers in Descending Order</h1>
+    <form id="numberForm">
+        <label for="numbers">Enter integers separated by commas:</label><br><br>
+        <input type="text" id="numbers" name="numbers" placeholder="e.g., 5,3,8,1,2">
+        <button type="button" onclick="sortNumbers()">Sort</button>
+    </form>
+
+    <h2>Sorted Numbers:</h2>
+    <div id="result"></div>
+
+    <script>
+        function sortNumbers() {
+            // Get the input string
+            const input = document.getElementById('numbers').value;
+
+            // Convert the input to an array of integers
+            let numbers = input.split(',').map(num => parseInt(num.trim())).filter(num => !isNaN(num));
+
+            // Sort the numbers in descending order
+            numbers.sort((a, b) => b - a);
+
+            // Display the sorted numbers
+            document.getElementById('result').innerText = numbers.join(', ');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>User Login</h1>
+    <form id="loginForm" onsubmit="return validateLogin()">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Create an AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "login", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // Handle the server response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        document.getElementById("message").innerText = xhr.responseText;
+                    } else {
+                        document.getElementById("message").innerText = "Error logging in.";
+                    }
+                }
+            };
+
+            // Send the request with the form data
+            xhr.send(`username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+
+            // Prevent form from submitting traditionally
+            return false;
+        }
+    </script>
+</body>
+</html>

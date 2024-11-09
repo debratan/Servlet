@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve Data with AJAX</title>
+</head>
+<body>
+    <h1>Retrieve Data from a TXT File</h1>
+    <button onclick="loadTextFile()">Load Text File</button>
+    
+    <h2>Content:</h2>
+    <div id="content"></div>
+
+    <script>
+        function loadTextFile() {
+            // Create a new XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Configure it: GET-request for the URL of the text file
+            xhr.open("GET", "data.txt", true);
+
+            // Set up the callback function to handle the response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // When the request is successful, display the response text
+                    document.getElementById("content").innerText = xhr.responseText;
+                } else if (xhr.readyState === 4) {
+                    // If the request fails, show an error message
+                    document.getElementById("content").innerText = "Error loading file.";
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

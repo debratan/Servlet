@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrieve XML Data with AJAX</title>
+</head>
+<body>
+    <h1>Retrieve Data from an XML File</h1>
+    <button onclick="loadXML()">Load XML Data</button>
+    
+    <h2>Content:</h2>
+    <div id="content"></div>
+
+    <script>
+        function loadXML() {
+            // Create a new XMLHttpRequest object
+            const xhr = new XMLHttpRequest();
+
+            // Configure it: GET-request for the URL of the XML file
+            xhr.open("GET", "data.xml", true);
+
+            // Set up the callback function to handle the response
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // When the request is successful, process the XML data
+                    const xmlDoc = xhr.responseXML;
+                    displayXMLData(xmlDoc);
+                } else if (xhr.readyState === 4) {
+                    // If the request fails, show an error message
+                    document.getElementById("content").innerText = "Error loading file.";
+                }
+            };
+
+            // Send the request
+            xhr.send();
+        }
+
+        function displayXMLData(xmlDoc) {
+            // Retrieve elements from the XML document
+            const items = xmlDoc.getElementsByTagName("item");
+            let htmlContent = "";
+
+            // Loop through each item and extract data
+            for (let i = 0; i < items.length; i++) {
+                const name = items[i].getElementsByTagName("name")[0].textContent;
+                const price = items[i].getElementsByTagName("price")[0].textContent;
+                htmlContent += `<p><strong>Name:</strong> ${name} <br> <strong>Price:</strong> ${price}</p>`;
+            }
+
+            // Display the extracted data in the HTML content div
+            document.getElementById("content").innerHTML = htmlContent;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country and Capital Selector</title>
+    <style>
+        /* Styling for the capital text */
+        #capital {
+            color: #2a9d8f;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Country to See its Capital</h1>
+    <form>
+        <label for="country">Choose a country:</label>
+        <select id="country" onchange="showCapital()">
+            <option value="">Select a country</option>
+            <option value="India">India</option>
+            <option value="France">France</option>
+            <option value="Japan">Japan</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Canada">Canada</option>
+        </select>
+        <span id="capital"></span>
+    </form>
+
+    <script>
+        // Mapping of countries to their capitals
+        const capitals = {
+            "India": "New Delhi",
+            "France": "Paris",
+            "Japan": "Tokyo",
+            "Brazil": "Brasília",
+            "Canada": "Ottawa"
+        };
+
+        // Function to display the capital when a country is selected
+        function showCapital() {
+            const country = document.getElementById("country").value;
+            const capitalDisplay = document.getElementById("capital");
+            
+            // Display the corresponding capital or clear the text if no country is selected
+            capitalDisplay.textContent = capitals[country] || "";
+        }
+    </script>
+</body>
+</html>
